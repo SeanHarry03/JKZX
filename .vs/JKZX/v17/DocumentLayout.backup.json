@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UnityProject\\JKZX\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E757841B-CDD9-8C4F-7D75-B03DA524B75F}|CommonAssembly.csproj|D:\\UnityProject\\JKZX\\assets\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E757841B-CDD9-8C4F-7D75-B03DA524B75F}|CommonAssembly.csproj|solutionrelative:assets\\scripts\\loadingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BA7C4B-85C4-EB40-D559-44F0DB4BF13A}|FramWorkCommonAssembly.csproj|d:\\unityproject\\jkzx\\assets\\common\\uicomponent\\progressbar\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BA7C4B-85C4-EB40-D559-44F0DB4BF13A}|FramWorkCommonAssembly.csproj|solutionrelative:assets\\common\\uicomponent\\progressbar\\progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215D1D3-36A1-4968-AE05-0FECB1C9AA8E}|Assembly-CSharp-Editor.csproj|D:\\UnityProject\\JKZX\\assets\\editor\\spriteimportersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215D1D3-36A1-4968-AE05-0FECB1C9AA8E}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\spriteimportersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoadingScene.cs",
+              "DocumentMoniker": "D:\\UnityProject\\JKZX\\Assets\\Scripts\\LoadingScene.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadingScene.cs",
+              "ToolTip": "D:\\UnityProject\\JKZX\\Assets\\Scripts\\LoadingScene.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadingScene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T06:27:42.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProgressBar.cs",
+              "DocumentMoniker": "D:\\UnityProject\\JKZX\\Assets\\Common\\UIComponent\\ProgressBar\\ProgressBar.cs",
+              "RelativeDocumentMoniker": "Assets\\Common\\UIComponent\\ProgressBar\\ProgressBar.cs",
+              "ToolTip": "D:\\UnityProject\\JKZX\\Assets\\Common\\UIComponent\\ProgressBar\\ProgressBar.cs",
+              "RelativeToolTip": "Assets\\Common\\UIComponent\\ProgressBar\\ProgressBar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T06:24:26.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SpriteImporterSetting.cs",
+              "DocumentMoniker": "D:\\UnityProject\\JKZX\\Assets\\Editor\\SpriteImporterSetting.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\SpriteImporterSetting.cs",
+              "ToolTip": "D:\\UnityProject\\JKZX\\Assets\\Editor\\SpriteImporterSetting.cs",
+              "RelativeToolTip": "Assets\\Editor\\SpriteImporterSetting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T05:52:52.624Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

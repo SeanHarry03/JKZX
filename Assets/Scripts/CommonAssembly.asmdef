@@ -1,0 +1,16 @@
+{
+    "name": "CommonAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f78cf9bf31950ee47a68bec8f0401e3b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
