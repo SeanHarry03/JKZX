@@ -1,66 +1,104 @@
+ï»¿using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+
 public class AssetBundleBrowser
 {
+    /// <summary>
+    /// key: abåŒ…åç§°   valueï¼šabåŒ…ä¾èµ–çš„èµ„æºçš„Seté›†åˆ
+    /// </summary>
+    private static Dictionary<string, HashSet<string>> _dependsDic;
+
     [MenuItem("CustomTools/AssetBundles/Build AssetBundle")]
     public static void BuildAssetBundle()
     {
-        // ¶¨ÒåAb°üµÄÊä³öÄ¿Â¼
-        string assetBundleDirectory = "Assets/AssetBundles";
-        // ¼ì²éÄ¿Â¼ÊÇ·ñ´æÔÚ£¬Èç¹û²»´æÔÚÔò´´½¨¸ÃÄ¿Â¼
+        // å®šä¹‰AbåŒ…çš„è¾“å‡ºç›®å½•
+        string assetBundleDirectory = "Assets/StreamingAssets";
+        // æ£€æŸ¥ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœä¸å­˜åœ¨åˆ™åˆ›å»ºè¯¥ç›®å½•
         if (!System.IO.Directory.Exists(assetBundleDirectory))
         {
             System.IO.Directory.CreateDirectory(assetBundleDirectory);
         }
-        // Ê¹ÓÃBuildPipeline¹¹½¨AssetBundles
-        // ²ÎÊı1£ºÊä³öÄ¿Â¼
-        // ²ÎÊı2£º¹¹½¨Ñ¡Ïî£¬ÕâÀïÊ¹ÓÃÄ¬ÈÏÑ¡Ïî£¨None£©
-        // ²ÎÊı3£ºÄ¿±êÆ½Ì¨£¬ÕâÀïÑ¡ÔñWindowsÆ½Ì¨
+        // ä½¿ç”¨BuildPipelineæ„å»ºAssetBundles
+        // å‚æ•°1ï¼šè¾“å‡ºç›®å½•
+        // å‚æ•°2ï¼šæ„å»ºé€‰é¡¹ï¼Œè¿™é‡Œä½¿ç”¨é»˜è®¤é€‰é¡¹ï¼ˆNoneï¼‰
+        // å‚æ•°3ï¼šç›®æ ‡å¹³å°ï¼Œè¿™é‡Œé€‰æ‹©Windowså¹³å°
 
-
-        Debug.Log("¿ªÊ¼´ò°ü");
-        BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
-
-        Debug.Log("´ò°üÍê³É");
+        
+        
+        Debug.Log("æ„å»ºæˆåŠŸ");
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None,
+            BuildTarget.StandaloneWindows);
     }
 
-    [MenuItem("CustomTools/AssetBundles/»ñÈ¡×ÊÔ´ËùÊôµÄAB°ü")]
+    [MenuItem("CustomTools/AssetBundles/è·å–é€‰ä¸­èµ„æºçš„ä¾èµ–èµ„æº")]
     public static void FindResAB()
     {
-        // »ñÈ¡ÓÃ»§ÔÚAssetsÄ¿Â¼ÏÂÑ¡ÖĞµÄ¶ÔÏó£¬²¢ÇÒ´æ´¢ÔÚÊı×éÖĞ
-        GameObject[] AllSelectObj = Selection.gameObjects;//·µ»ØÓÃ»§Ñ¡ÔñµÄ¶ÔÏó
-        // Èç¹ûÓĞ¶ÔÏó±»Ñ¡ÖĞ£¬ÔòÖ´ĞĞÑ¡ÖĞ²Ù×÷
+        // è·å–ç”¨æˆ·åœ¨Assetsç›®å½•ä¸‹é€‰ä¸­çš„å¯¹è±¡ï¼Œå¹¶ä¸”å­˜å‚¨åœ¨æ•°ç»„ä¸­
+        GameObject[] AllSelectObj = Selection.gameObjects; //è¿”å›ç”¨æˆ·é€‰æ‹©çš„å¯¹è±¡
+        // å¦‚æœæœ‰å¯¹è±¡è¢«é€‰ä¸­ï¼Œåˆ™æ‰§è¡Œé€‰ä¸­æ“ä½œ
         if (AllSelectObj != null && AllSelectObj.Length > 0)
         {
-            // ÎªÑ¡ÖĞµÄ¶ÔÏóÉèÖÃ AssetBundle Ãû³Æ
+            // ä¸ºé€‰ä¸­çš„å¯¹è±¡è®¾ç½® AssetBundle åç§°
             foreach (Object OneSelectObj in AllSelectObj)
             {
-                //AssetDatabase.GetAssetPath(selectedObject) Õâ¾äÊÇ»ñÈ¡Ñ¡ÔñµÄÎïÌåËùÔÚÂ·¾¶           
+                //AssetDatabase.GetAssetPath(selectedObject) è¿™å¥æ˜¯è·å–é€‰æ‹©çš„ç‰©ä½“æ‰€åœ¨è·¯å¾„                    
                 string OneSelectAssetPath = AssetDatabase.GetAssetPath(OneSelectObj);
                 Debug.Log(OneSelectAssetPath);
 
-                //»ñÈ¡Õâ¸ö±éÀúµ½µÄÆäÖĞÒ»¸ö×ÊÔ´µÄÂ·¾¶£¬Í¨¹ıÕâ¸öÎ¨Ò»µÄÂ·¾¶»ñÈ¡¸Ã×ÊÔ´±àÂëĞÅÏ¢
+                //è·å–è¿™ä¸ªéå†åˆ°çš„å…¶ä¸­ä¸€ä¸ªèµ„æºçš„è·¯å¾„ï¼Œé€šè¿‡è¿™ä¸ªå”¯ä¸€çš„è·¯å¾„è·å–è¯¥èµ„æºç¼–ç ä¿¡æ¯
                 AssetImporter assetImporter = AssetImporter.GetAtPath(OneSelectAssetPath);
-                //ÉèÖÃAssetBundleÃû×ÖºÍºó×º±äÌå
-                string asssetpath = assetImporter.assetPath.Replace("Assets/Game_One", "");
-                Debug.Log(asssetpath);
-                Debug.Log(Path.GetDirectoryName(asssetpath));
-                string[] dps = AssetDatabase.GetDependencies(assetImporter.assetPath);
-                Debug.Log("ÒÀÀµ×ÊÔ´" + dps.Length);
-                for (int i = 0; i < dps.Length; i++)
-                {
-                    Debug.Log(dps[i]);
-                }
+                //è®¾ç½®AssetBundleåå­—å’Œåç¼€å˜ä½“
+                string assetPath = assetImporter.assetPath.Replace("Assets", "");
+                Debug.Log(assetPath);
+                string abName = Path.GetDirectoryName(assetPath);
+                Debug.Log("AB " + abName);
+                AssetBundleBrowser.FindDepends(assetImporter.assetPath, GetDependsSet(abName));
                 //assetImporter.SetAssetBundleNameAndVariant("Models", "unity");
             }
-            // Ë¢ĞÂ AssetDatabase£¬È·±£ÔÚ±à¼­Æ÷ÖĞÄÜ¹»¿´µ½ĞÂÉú³ÉµÄ AssetBundles
+
+            // åˆ·æ–° AssetDatabaseï¼Œç¡®ä¿åœ¨ç¼–è¾‘å™¨ä¸­èƒ½å¤Ÿçœ‹åˆ°æ–°ç”Ÿæˆçš„ AssetBundles
             AssetDatabase.Refresh();
         }
         else
         {
-            UnityEngine.Debug.LogWarning("Î´Ñ¡ÖĞÎïÌå");
+            UnityEngine.Debug.LogWarning("æœªé€‰ä¸­ç‰©ä½“");
         }
-        //Debug.Log("°ÑÑ¡ÖĞµÄÎïÌåÖ¸¶¨Ò»¸öAssetBundleÃû½Ğ-Models");
+    }
+
+    /// <summary>
+    /// æŸ¥è¯¢èµ„æºä¾èµ–çš„èµ„æº
+    /// </summary>
+    /// <param name="assetPath"></param>
+    private static void FindDepends(string assetPath, HashSet<string> dependsSet)
+    {
+        Debug.Log("1111");
+        string[] dps = AssetDatabase.GetDependencies(assetPath);
+        foreach (string dependPath in dps)
+        {
+            Debug.Log(dependPath);
+            if (dependPath.Contains(".cs"))
+            {
+                continue;
+            }
+
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´
+            if (false == dependsSet.Contains(dependPath))
+            {
+                dependsSet.Add(dependPath);
+            }
+        }
+    }
+
+    private static HashSet<string> GetDependsSet(string abName)
+    {
+        if (false == _dependsDic.ContainsKey(abName))
+        {
+            _dependsDic[abName] = new HashSet<string>();
+        }
+
+        return _dependsDic[abName];
     }
 }
