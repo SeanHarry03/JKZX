@@ -1,0 +1,896 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "1.0",
+    "PackageNote": "2025/8/18 10:53:19",
+    "AssetList": [
+        {
+            "Address": "gameone_GameObject",
+            "AssetPath": "Assets/game_one/Prefab/GameObject.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                1
+            ]
+        },
+        {
+            "Address": "gameone_One_MainPanel",
+            "AssetPath": "Assets/game_one/Prefab/One_MainPanel.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Game_OneAssembly",
+            "AssetPath": "Assets/game_one/Scripts/Game_OneAssembly.asmdef",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Clse",
+            "AssetPath": "Assets/game_one/Texture/Clse.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_game_15",
+            "AssetPath": "Assets/game_one/Texture/HP/game_15.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_game_16",
+            "AssetPath": "Assets/game_one/Texture/HP/game_16.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_1",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_2",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_3",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_4",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_5",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_6",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_6.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_7",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_7.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_8",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_8.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page20_9",
+            "AssetPath": "Assets/game_one/Texture/NewEmptry/page20_9.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips1",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips3",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips4",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips5",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Tips6",
+            "AssetPath": "Assets/game_one/Texture/OverTips/Tips6.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_10",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_10.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_14",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_14.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_15",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_15.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_16",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_16.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_17",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_17.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_2",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_4",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page10_7",
+            "AssetPath": "Assets/game_one/Texture/page10/page10_7.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_2",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_3",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_4",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_5",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_6",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_6.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page2_7",
+            "AssetPath": "Assets/game_one/Texture/page2/page2_7.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_1",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_2",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_3",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_4",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_5",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page3_6",
+            "AssetPath": "Assets/game_one/Texture/page3/page3_6.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_1",
+            "AssetPath": "Assets/game_one/Texture/page4/1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page4_1",
+            "AssetPath": "Assets/game_one/Texture/page4/page4_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page4_2",
+            "AssetPath": "Assets/game_one/Texture/page4/page4_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_框",
+            "AssetPath": "Assets/game_one/Texture/page4/框.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_矩形 5",
+            "AssetPath": "Assets/game_one/Texture/page4/矩形 5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page5_1",
+            "AssetPath": "Assets/game_one/Texture/page5/page5_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page5_2",
+            "AssetPath": "Assets/game_one/Texture/page5/page5_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page5_3",
+            "AssetPath": "Assets/game_one/Texture/page5/page5_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_乙胺丁醇1",
+            "AssetPath": "Assets/game_one/Texture/page6/Buy/乙胺丁醇1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_利福平1",
+            "AssetPath": "Assets/game_one/Texture/page6/Buy/利福平1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_吡嗪酰胺1",
+            "AssetPath": "Assets/game_one/Texture/page6/Buy/吡嗪酰胺1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_异烟肼1",
+            "AssetPath": "Assets/game_one/Texture/page6/Buy/异烟肼1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_HPBG",
+            "AssetPath": "Assets/game_one/Texture/page6/Emptry/HPBG.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_4",
+            "AssetPath": "Assets/game_one/Texture/page6/Font/page6_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_5",
+            "AssetPath": "Assets/game_one/Texture/page6/Font/page6_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_6",
+            "AssetPath": "Assets/game_one/Texture/page6/Font/page6_6.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_7",
+            "AssetPath": "Assets/game_one/Texture/page6/Font/page6_7.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_8",
+            "AssetPath": "Assets/game_one/Texture/page6/Font/page6_8.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_87",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_87.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_88",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_88.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_89",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_89.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_90",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_90.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_91",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_91.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_92",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_92.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_93",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_93.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_94",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_94.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_95",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_95.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_96",
+            "AssetPath": "Assets/game_one/Texture/page6/Map/page6_96.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_1",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_11",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_11.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_12",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_12.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_2",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_3",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_84",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_84.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_85",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_85.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_9",
+            "AssetPath": "Assets/game_one/Texture/page6/Ohter/page6_9.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_86",
+            "AssetPath": "Assets/game_one/Texture/page6/page6_86.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_Cover",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/Cover.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page21_20",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page21_20.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page21_23",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page21_23.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page21_3",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page21_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page21_5",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page21_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page21_8",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page21_8.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_16",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page6_16.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page6_22",
+            "AssetPath": "Assets/game_one/Texture/page6/Turret/page6_22.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page7_2",
+            "AssetPath": "Assets/game_one/Texture/page7/page7_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page7_3",
+            "AssetPath": "Assets/game_one/Texture/page7/page7_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_肺结核是长期严重危害人民健康的慢性传染病。 ",
+            "AssetPath": "Assets/game_one/Texture/page7/肺结核是长期严重危害人民健康的慢性传染病。 .png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page8_1",
+            "AssetPath": "Assets/game_one/Texture/page8/page8_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_page8_2",
+            "AssetPath": "Assets/game_one/Texture/page8/page8_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_组 6 拷贝",
+            "AssetPath": "Assets/game_one/Texture/page8/组 6 拷贝.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_1",
+            "AssetPath": "Assets/game_one/Texture/select/select_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_10",
+            "AssetPath": "Assets/game_one/Texture/select/select_10.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_11",
+            "AssetPath": "Assets/game_one/Texture/select/select_11.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_12",
+            "AssetPath": "Assets/game_one/Texture/select/select_12.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_13",
+            "AssetPath": "Assets/game_one/Texture/select/select_13.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_14",
+            "AssetPath": "Assets/game_one/Texture/select/select_14.jpg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_2",
+            "AssetPath": "Assets/game_one/Texture/select/select_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_3",
+            "AssetPath": "Assets/game_one/Texture/select/select_3.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_4",
+            "AssetPath": "Assets/game_one/Texture/select/select_4.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_5",
+            "AssetPath": "Assets/game_one/Texture/select/select_5.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_6",
+            "AssetPath": "Assets/game_one/Texture/select/select_6.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_7",
+            "AssetPath": "Assets/game_one/Texture/select/select_7.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_8",
+            "AssetPath": "Assets/game_one/Texture/select/select_8.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_select_9",
+            "AssetPath": "Assets/game_one/Texture/select/select_9.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "gameone_组 20",
+            "AssetPath": "Assets/game_one/Texture/select/组 20.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "gameone.bundle",
+            "UnityCRC": 538632416,
+            "FileHash": "26f5dbdfcc4722574c0755c5ccd33d31",
+            "FileCRC": "f78a03c3",
+            "FileSize": 11288612,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                1
+            ]
+        },
+        {
+            "BundleName": "share_assets.bundle",
+            "UnityCRC": 3305963249,
+            "FileHash": "85b84769d42de93d1ecfb3d76f5d87ef",
+            "FileCRC": "3603dbe7",
+            "FileSize": 4502,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

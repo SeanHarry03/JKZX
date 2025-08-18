@@ -29,7 +29,7 @@ namespace FrameWork.Core
             return bundle;
         }
 
-        public void GetResources<T>(string name, string bundlName = BundlNameEnum.resources)
+        public T GetResources<T>(string name, string bundlName = BundlNameEnum.resources)
             where T : UnityEngine.Object
         {
             if (bundlName == BundlNameEnum.resources)
@@ -38,27 +38,31 @@ namespace FrameWork.Core
             else
             {
                 AssetBundle assetBundle = GetBundle(bundlName);
-                var list = assetBundle.LoadAllAssets();
-                Debug.Log("全部资源");
-                foreach (var asset in list)
-                {
-                    Debug.Log(asset.ToString());
-                    Debug.LogWarning(asset.ToString());
-                    if (asset.GetType() == typeof(UnityEngine.GameObject))
-                    {
-                        // GameObject go = (GameObject)GameObject.Instantiate(asset);
-                    }
-                }
-
+                // var list = assetBundle.LoadAllAssets();
+                // Debug.Log("全部资源");
+                // foreach (var asset in list)
+                // {
+                //     Debug.Log(asset.ToString());
+                //     Debug.LogWarning(asset.ToString());
+                //     if (asset.GetType() == typeof(UnityEngine.GameObject))
+                //     {
+                //         // GameObject go = (GameObject)GameObject.Instantiate(asset);
+                //         return asset as T;
+                //     }
+                // }
 
                 if (assetBundle != null)
                 {
                     T asset = assetBundle.LoadAsset<T>(name);
                     Debug.Log("加载成功");
                     Debug.Log(asset);
+                    return asset;
                 }
             }
+
+            return null;
         }
+
 
         /// <summary>
         /// 异步加载Bundle包资源

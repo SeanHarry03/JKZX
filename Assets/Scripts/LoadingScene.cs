@@ -4,45 +4,26 @@ using FrameWork.Core;
 using FrameWork.Core.UI;
 using FrameWork.UIComponent;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using YooAsset;
 
 public class LoadingScene : MonoBehaviour
 {
     public ProgressBar progressBar = null;
+    private float progress = 0;
 
     private void Awake()
     {
-        // ResManager.Instance.GetResources<GameObject>("One_MainPanel",BundlNameEnum.game_one);
-        // StartCoroutine((ResManager.Instance.GetBundleASycn(BundlNameEnum.game_one, LoadTest)));
-        AbTest();
+        ResManager.Instance.GetResources<GameObject>("One_MainPanel", BundlNameEnum.game_one);
     }
 
-    private void LoadTest(AssetBundle assetBundle)
+    private void Update()
     {
-        if (assetBundle != null)
+        this.progress += Time.deltaTime;
+        this.progressBar.updateProgress(this.progress);
+        if (this.progress >= 1)
         {
-            Debug.Log("AssetBundle loaded: " + assetBundle.name);
-            // 在这里使用加载的AssetBundle
-        }
-        else
-        {
-            Debug.Log("Failed to load AssetBundle!");
-        }
-    }
-
-    private void AbTest()
-    {
-        AssetBundle assetBundle = AssetBundle.LoadFromFile("Assets/StreamingAssets/game_one.ab");
-        var list = assetBundle.LoadAllAssets();
-        foreach (var asset in list)
-        {
-            Debug.Log(asset.ToString());
-            if (asset.GetType() == typeof(UnityEngine.GameObject))
-            {
-                Debug.LogWarning(asset.ToString());
-                GameObject go = (GameObject)Instantiate(asset);
-                go.transform.SetParent(this.transform);
-                go.transform.localPosition = Vector3.zero;
-            }
+            SceneManager.LoadScene("MainScene");
         }
     }
 }
