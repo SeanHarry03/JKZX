@@ -38,18 +38,6 @@ namespace FrameWork.Core
             else
             {
                 AssetBundle assetBundle = GetBundle(bundlName);
-                // var list = assetBundle.LoadAllAssets();
-                // Debug.Log("全部资源");
-                // foreach (var asset in list)
-                // {
-                //     Debug.Log(asset.ToString());
-                //     Debug.LogWarning(asset.ToString());
-                //     if (asset.GetType() == typeof(UnityEngine.GameObject))
-                //     {
-                //         // GameObject go = (GameObject)GameObject.Instantiate(asset);
-                //         return asset as T;
-                //     }
-                // }
 
                 if (assetBundle != null)
                 {
@@ -70,7 +58,8 @@ namespace FrameWork.Core
         /// <param name="bundleName">包名</param>
         /// <param name="onComplete">加载完成的回调函数</param>
         /// <returns></returns>
-        public IEnumerator GetBundleASycn(string bundleName, System.Action<AssetBundle> onComplete)
+        public IEnumerator GetBundleASycn(string bundleName, System.Action<float> onProgress,
+            System.Action<AssetBundle> onComplete)
         {
             _mBundleDic.TryGetValue(bundleName, out AssetBundle bundle);
             if (bundle == null)
@@ -78,6 +67,12 @@ namespace FrameWork.Core
                 AssetBundleCreateRequest bundleLoadRequest =
                     AssetBundle.LoadFromFileAsync(Path.Combine(Application.streamingAssetsPath, (bundleName + ".ab")));
                 yield return bundleLoadRequest;
+                while (!bundleLoadRequest.isDone)
+                {
+                    onProgress?.Invoke(bundleLoadRequest.progress);
+                    yield return null;
+                }
+
                 AssetBundle myLoadedAssetBundle = bundleLoadRequest.assetBundle;
                 if (!myLoadedAssetBundle)
                 {
