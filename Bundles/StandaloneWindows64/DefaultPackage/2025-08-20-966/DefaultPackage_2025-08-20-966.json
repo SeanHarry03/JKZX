@@ -1,0 +1,169 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": true,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2025-08-20-966",
+    "PackageNote": "2025/8/20 16:06:41",
+    "AssetList": [
+        {
+            "Address": "GameObject",
+            "AssetPath": "Assets/GameRes/GameOne/Prefab/GameObject.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                4
+            ]
+        },
+        {
+            "Address": "One_MainPanel",
+            "AssetPath": "Assets/GameRes/GameOne/Prefab/One_MainPanel.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                5
+            ]
+        },
+        {
+            "Address": "Tow_MainPanel",
+            "AssetPath": "Assets/GameRes/GameTow/Prefab/Tow_MainPanel.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": [
+                5
+            ]
+        },
+        {
+            "Address": "LoadingScene",
+            "AssetPath": "Assets/Scenes/LoadingScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [
+                "scene"
+            ],
+            "BundleID": 2,
+            "DependBundleIDs": [
+                7
+            ]
+        },
+        {
+            "Address": "MainScene",
+            "AssetPath": "Assets/Scenes/MainScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [
+                "scene"
+            ],
+            "BundleID": 3,
+            "DependBundleIDs": [
+                6,
+                7
+            ]
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_gameres_gameone_prefab.bundle",
+            "UnityCRC": 2253292722,
+            "FileHash": "13b98237a3aa616c5c4ee7800075ba0c",
+            "FileCRC": "c19fc133",
+            "FileSize": 4973,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                4,
+                5
+            ]
+        },
+        {
+            "BundleName": "assets_gameres_gametow_prefab.bundle",
+            "UnityCRC": 4139717317,
+            "FileHash": "01c91a41470ae39352b6e70e8a3fccbd",
+            "FileCRC": "a170bba1",
+            "FileSize": 4019,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                5
+            ]
+        },
+        {
+            "BundleName": "assets_scenes_loadingscene.bundle",
+            "UnityCRC": 1979972546,
+            "FileHash": "26e3c90efd354d7ede6834e70a3e3175",
+            "FileCRC": "d6861684",
+            "FileSize": 100620,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundleIDs": [
+                7
+            ]
+        },
+        {
+            "BundleName": "assets_scenes_mainscene.bundle",
+            "UnityCRC": 2515432477,
+            "FileHash": "c45f4493986054edcc5af39f93bd3601",
+            "FileCRC": "499a304d",
+            "FileSize": 105583,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundleIDs": [
+                6,
+                7
+            ]
+        },
+        {
+            "BundleName": "share_assets.bundle",
+            "UnityCRC": 3305963249,
+            "FileHash": "85b84769d42de93d1ecfb3d76f5d87ef",
+            "FileCRC": "3603dbe7",
+            "FileSize": 4502,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_gameres_gameone_texture_page3.bundle",
+            "UnityCRC": 45045504,
+            "FileHash": "8430e85c3f979a0e5db4ef07540c758e",
+            "FileCRC": "c83ec05b",
+            "FileSize": 633644,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_texture_common.bundle",
+            "UnityCRC": 804316112,
+            "FileHash": "2b78881072763bde4b1b011bd276a425",
+            "FileCRC": "af50fe8e",
+            "FileSize": 661304,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "UnityCRC": 2435366316,
+            "FileHash": "34b2d8e6f162837f408a4688eb530384",
+            "FileCRC": "224827e3",
+            "FileSize": 20066,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundleIDs": []
+        }
+    ]
+}

@@ -29,8 +29,16 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/game_one/Prefab
+      - CollectPath: Assets/GameRes/GameOne/Prefab
         CollectorGUID: e87e960251951bb409b3271d1faa8bd8
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectPrefab
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/GameRes/GameTow/Prefab
+        CollectorGUID: 6b14d318591f6cd46a7379afde0af62a
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

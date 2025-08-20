@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043052614c9971e49a12d25902a83634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayMode: 1
+  PlayMode: 0
 --- !u!4 &1841700641
 Transform:
   m_ObjectHideFlags: 0

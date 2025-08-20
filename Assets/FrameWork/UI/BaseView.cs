@@ -30,13 +30,14 @@ namespace FrameWork.UI
         private void OnDestroy()
         {
             this._isDestroying = true;
-            if (this._isShow)
-            {
-                this.Close();
-            }
+            this.AfterClose();
         }
 
-        private void Show(object parames)
+        /// <summary>
+        /// 打开界面
+        /// </summary>
+        /// <param name="parames"></param>
+        public void Show(object parames)
         {
             this.ExtraData = parames;
             if (!this._isInit)
@@ -57,7 +58,7 @@ namespace FrameWork.UI
         /// <summary>
         /// 隐藏界面
         /// </summary>
-        private void Hide(bool isAnimation = true)
+        public void Hide(bool isAnimation = true)
         {
             this._isShow = false;
             if (isAnimation)
@@ -66,7 +67,7 @@ namespace FrameWork.UI
             }
             else
             {
-                this.AfterClose();
+                this.BeforClose();
             }
         }
 
@@ -75,7 +76,7 @@ namespace FrameWork.UI
         /// <param name="isDestroy">是否销毁节点</param>
         /// <param name="isAnimation">是否需要动画</param>
         /// </summary>
-        private void Close(bool isDestroy = true, bool isAnimation = true)
+        public void Close(bool isDestroy = true, bool isAnimation = true)
         {
             this._isClose = true;
             this.BeforeClose();
@@ -88,7 +89,7 @@ namespace FrameWork.UI
             }
             else
             {
-                this.AfterClose();
+                this.BeforClose();
             }
         }
 
@@ -114,12 +115,16 @@ namespace FrameWork.UI
         }
 
 
+        /// <summary>
+        /// 关闭动画结束后调用
+        /// </summary>
         protected virtual void BeforClose()
         {
         }
 
+
         /// <summary>
-        /// 关闭动画结束后调用
+        /// 界面销毁后调用
         /// </summary>
         protected virtual void AfterClose()
         {
@@ -139,6 +144,12 @@ namespace FrameWork.UI
             _tween = transform.DOScale(Vector3.one, tweenDuration).SetEase(Ease.OutBack).SetUpdate(true)
                 .OnComplete(() =>
                 {
+                    if (this == null || !this.gameObject)
+                    {
+                        Debug.LogWarning("访问了已经销毁的对象！");
+                        return;
+                    }
+
                     if (callback != null)
                     {
                         callback();
@@ -154,12 +165,18 @@ namespace FrameWork.UI
             _tween = transform.DOScale(Vector3.zero, tweenDuration).SetEase(Ease.InBack).SetUpdate(true)
                 .OnComplete(() =>
                 {
+                    if (this == null || !this.gameObject)
+                    {
+                        Debug.LogWarning("访问了已经销毁的对象！");
+                        return;
+                    }
+
                     if (callback != null)
                     {
                         callback();
                     }
 
-                    this.AfterClose();
+                    this.BeforClose();
                 });
         }
     }

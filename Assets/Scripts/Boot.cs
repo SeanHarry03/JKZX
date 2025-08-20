@@ -5,6 +5,7 @@ using FrameWork.GameLogic;
 using FrameWork.PatchLogic;
 using UnityEngine;
 using YooAsset;
+
 public class Boot : MonoBehaviour
 {
     /// <summary>
@@ -32,11 +33,11 @@ public class Boot : MonoBehaviour
         var operation = new PatchOperation("DefaultPackage", PlayMode);
         YooAssets.StartOperation(operation);
         yield return operation;
-        Debug.Log("------------------");
 
         // 设置默认的资源包
         var gamePackage = YooAssets.GetPackage("DefaultPackage");
         YooAssets.SetDefaultPackage(gamePackage);
+        
         // 切换到主页面场景
         SceneEventDefine.ChangeToHomeScene.SendEventMessage();
     }

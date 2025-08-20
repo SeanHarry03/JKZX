@@ -1,0 +1,367 @@
+{
+    "Summary": {
+        "YooVersion": "2.3.14",
+        "UnityVersion": "2022.3.62f1c1",
+        "BuildDate": "2025/8/20 16:06:44",
+        "BuildSeconds": 2,
+        "BuildTarget": 19,
+        "BuildPipeline": "ScriptableBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2025-08-20-966",
+        "BuildPackageNote": "2025/8/20 16:06:41",
+        "UniqueBundleName": false,
+        "EnableAddressable": true,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": true,
+        "UseAssetDependencyDB": true,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionServicesClassName": "YooAsset.Editor.EncryptionNone",
+        "ManifestProcessServicesClassName": "YooAsset.Editor.ManifestProcessNone",
+        "ManifestRestoreServicesClassName": "YooAsset.Editor.ManifestRestoreNone",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "unityshaders.bundle",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 16,
+        "MainAssetTotalCount": 5,
+        "AllBundleTotalCount": 8,
+        "AllBundleTotalSize": 1534711,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "GameObject",
+            "AssetPath": "Assets/GameRes/GameOne/Prefab/GameObject.prefab",
+            "AssetGUID": "1f4b86ecf3f591245b82126d865d4d4e",
+            "AssetTags": [],
+            "MainBundleName": "assets_gameres_gameone_prefab.bundle",
+            "MainBundleSize": 4973,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/game_16.png",
+                    "AssetGUID": "0de53b73cce3aa746a8b109babc4a142"
+                }
+            ],
+            "DependBundles": [
+                "share_assets.bundle"
+            ]
+        },
+        {
+            "Address": "One_MainPanel",
+            "AssetPath": "Assets/GameRes/GameOne/Prefab/One_MainPanel.prefab",
+            "AssetGUID": "3d9b4b327e2f7534bbcc10cb1545276d",
+            "AssetTags": [],
+            "MainBundleName": "assets_gameres_gameone_prefab.bundle",
+            "MainBundleSize": 4973,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_1.png",
+                    "AssetGUID": "097a93f16179c014992fe91c677b5c9d"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_2.png",
+                    "AssetGUID": "dd6aa3168206a5041af4388c30f3f240"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_3.png",
+                    "AssetGUID": "8123bf19e377d94449f77906a115e2b7"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_4.png",
+                    "AssetGUID": "6ee213bd179ebec4081b442a130f4955"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_5.png",
+                    "AssetGUID": "a39b395c24573214f938cf25fd815441"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_6.jpg",
+                    "AssetGUID": "7ee93512e8a2e4544aa2733065da380b"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_gameres_gameone_texture_page3.bundle"
+            ]
+        },
+        {
+            "Address": "Tow_MainPanel",
+            "AssetPath": "Assets/GameRes/GameTow/Prefab/Tow_MainPanel.prefab",
+            "AssetGUID": "ca7995a873a40ca4e8fafe192fa1a083",
+            "AssetTags": [],
+            "MainBundleName": "assets_gameres_gametow_prefab.bundle",
+            "MainBundleSize": 4019,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_2.png",
+                    "AssetGUID": "dd6aa3168206a5041af4388c30f3f240"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_5.png",
+                    "AssetGUID": "a39b395c24573214f938cf25fd815441"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_6.jpg",
+                    "AssetGUID": "7ee93512e8a2e4544aa2733065da380b"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_gameres_gameone_texture_page3.bundle"
+            ]
+        },
+        {
+            "Address": "LoadingScene",
+            "AssetPath": "Assets/Scenes/LoadingScene.unity",
+            "AssetGUID": "9fc0d4010bbf28b4594072e72b8655ab",
+            "AssetTags": [
+                "scene"
+            ],
+            "MainBundleName": "assets_scenes_loadingscene.bundle",
+            "MainBundleSize": 100620,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "MainScene",
+            "AssetPath": "Assets/Scenes/MainScene.unity",
+            "AssetGUID": "a0f899669dcb4f54c974583a9914e4b3",
+            "AssetTags": [
+                "scene"
+            ],
+            "MainBundleName": "assets_scenes_mainscene.bundle",
+            "MainBundleSize": 105583,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/Texture/Common/BG.jpg",
+                    "AssetGUID": "24a179d4b82b16146b7cbd2c1d316320"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/JFCZ.png",
+                    "AssetGUID": "54fb18ae1ccc75f46b3cd7a2ff968876"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/JSC.png",
+                    "AssetGUID": "0eb056ca0e06f144093531c39db2ba01"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/select_4.png",
+                    "AssetGUID": "f5de84e4517534f49aee0dc8741a89c3"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_texture_common.bundle",
+                "unityshaders.bundle"
+            ]
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_gameres_gameone_prefab.bundle",
+            "FileName": "13b98237a3aa616c5c4ee7800075ba0c.bundle",
+            "FileHash": "13b98237a3aa616c5c4ee7800075ba0c",
+            "FileCRC": "c19fc133",
+            "FileSize": 4973,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "share_assets.bundle",
+                "share_assets_gameres_gameone_texture_page3.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Prefab/GameObject.prefab",
+                    "AssetGUID": "1f4b86ecf3f591245b82126d865d4d4e"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Prefab/One_MainPanel.prefab",
+                    "AssetGUID": "3d9b4b327e2f7534bbcc10cb1545276d"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_gameres_gametow_prefab.bundle",
+            "FileName": "01c91a41470ae39352b6e70e8a3fccbd.bundle",
+            "FileHash": "01c91a41470ae39352b6e70e8a3fccbd",
+            "FileCRC": "a170bba1",
+            "FileSize": 4019,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "share_assets_gameres_gameone_texture_page3.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/GameRes/GameTow/Prefab/Tow_MainPanel.prefab",
+                    "AssetGUID": "ca7995a873a40ca4e8fafe192fa1a083"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_scenes_loadingscene.bundle",
+            "FileName": "26e3c90efd354d7ede6834e70a3e3175.bundle",
+            "FileHash": "26e3c90efd354d7ede6834e70a3e3175",
+            "FileCRC": "d6861684",
+            "FileSize": 100620,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Scenes/LoadingScene.unity",
+                    "AssetGUID": "9fc0d4010bbf28b4594072e72b8655ab"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_scenes_mainscene.bundle",
+            "FileName": "c45f4493986054edcc5af39f93bd3601.bundle",
+            "FileHash": "c45f4493986054edcc5af39f93bd3601",
+            "FileCRC": "499a304d",
+            "FileSize": 105583,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundles": [
+                "share_assets_texture_common.bundle",
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Scenes/MainScene.unity",
+                    "AssetGUID": "a0f899669dcb4f54c974583a9914e4b3"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets.bundle",
+            "FileName": "85b84769d42de93d1ecfb3d76f5d87ef.bundle",
+            "FileHash": "85b84769d42de93d1ecfb3d76f5d87ef",
+            "FileCRC": "3603dbe7",
+            "FileSize": 4502,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_gameres_gameone_prefab.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/game_16.png",
+                    "AssetGUID": "0de53b73cce3aa746a8b109babc4a142"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_gameres_gameone_texture_page3.bundle",
+            "FileName": "8430e85c3f979a0e5db4ef07540c758e.bundle",
+            "FileHash": "8430e85c3f979a0e5db4ef07540c758e",
+            "FileCRC": "c83ec05b",
+            "FileSize": 633644,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_gameres_gameone_prefab.bundle",
+                "assets_gameres_gametow_prefab.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_1.png",
+                    "AssetGUID": "097a93f16179c014992fe91c677b5c9d"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_2.png",
+                    "AssetGUID": "dd6aa3168206a5041af4388c30f3f240"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_3.png",
+                    "AssetGUID": "8123bf19e377d94449f77906a115e2b7"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_4.png",
+                    "AssetGUID": "6ee213bd179ebec4081b442a130f4955"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_5.png",
+                    "AssetGUID": "a39b395c24573214f938cf25fd815441"
+                },
+                {
+                    "AssetPath": "Assets/GameRes/GameOne/Texture/page3/page3_6.jpg",
+                    "AssetGUID": "7ee93512e8a2e4544aa2733065da380b"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_texture_common.bundle",
+            "FileName": "2b78881072763bde4b1b011bd276a425.bundle",
+            "FileHash": "2b78881072763bde4b1b011bd276a425",
+            "FileCRC": "af50fe8e",
+            "FileSize": 661304,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_scenes_mainscene.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Texture/Common/BG.jpg",
+                    "AssetGUID": "24a179d4b82b16146b7cbd2c1d316320"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/JFCZ.png",
+                    "AssetGUID": "54fb18ae1ccc75f46b3cd7a2ff968876"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/JSC.png",
+                    "AssetGUID": "0eb056ca0e06f144093531c39db2ba01"
+                },
+                {
+                    "AssetPath": "Assets/Texture/Common/select_4.png",
+                    "AssetGUID": "f5de84e4517534f49aee0dc8741a89c3"
+                }
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "FileName": "34b2d8e6f162837f408a4688eb530384.bundle",
+            "FileHash": "34b2d8e6f162837f408a4688eb530384",
+            "FileCRC": "224827e3",
+            "FileSize": 20066,
+            "Encrypted": false,
+            "Tags": [
+                "scene"
+            ],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_scenes_loadingscene.bundle",
+                "assets_scenes_mainscene.bundle"
+            ],
+            "BundleContents": []
+        }
+    ],
+    "IndependAssets": []
+}

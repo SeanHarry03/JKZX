@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using FrameWork.Core;
 using UnityEngine;
+using YooAsset;
 
 namespace FrameWork.UI
 {
     public class UIManager : SingletonMono<UIManager>
     {
         [SerializeField] private Canvas mainCanvas; // 在Inspector中拖拽赋值 
-        private Dictionary<string, BaseView> _viewPrefabDic = new Dictionary<string, BaseView>();
         [NonSerialized] public GameObject NormalRoot;
         [NonSerialized] public GameObject PopupRoot;
         [NonSerialized] public GameObject TipRoot;
         [NonSerialized] public GameObject WarnRoot;
 
+        /// <summary>
+        /// 界面缓存
+        /// </summary>
+        private Dictionary<string, GameObject> _viewPrefabDic = new Dictionary<string, GameObject>();
 
         /// <summary>
         /// 界面状态的日志打印
@@ -37,33 +43,44 @@ namespace FrameWork.UI
             this.CreateViewRoot();
         }
 
-        public void ShowView(string viewName,object parames, string bundlName = "", bool isAnimation = true)
+        public void ShowView(string viewName, bool isAnimation = true, params object[] parame)
         {
             if (this.IsLog)
                 Debug.Log("打开界面--->" + viewName);
-            BaseView viewPrefab = null;
-            _viewPrefabDic.TryGetValue(viewName + "_bundle_" + bundlName, out viewPrefab);
+            BaseView view = null;
+            GameObject viewPrefab = Resources.Load<GameObject>(viewName);
+            Transform viewGo = null;
+            string bundleName = "resoucres";
             if (viewPrefab == null)
             {
-                if (bundlName != "")
+                //从AssetBunle加载
+                AssetHandle handle = YooAssets.LoadAssetSync<GameObject>(viewName);
+
+                viewGo = handle.InstantiateSync().transform;
+
+                string assetPath = YooAssets.GetAssetInfo(viewName).AssetPath;
+                bundleName = assetPath.Split('/')[2];
+            }
+            else
+            {
+                viewGo = GameObject.Instantiate(viewPrefab).transform;
+            }
+
+            if (viewGo)
+            {
+                view = viewGo.GetComponent<BaseView>();
+                if (view == null)
                 {
-                    viewPrefab = BundleManager.Instance.GetResources<BaseView>(viewName, bundlName);
-                }
-                else
-                {
-                    viewPrefab = BundleManager.Instance.GetResourcesWithAll<BaseView>(viewName, out bundlName);
+                    Debug.LogError("没有找到界面：" + viewName);
                 }
 
-                if (viewPrefab)
-                    _viewPrefabDic.Add(viewName + "_bundle_" + bundlName, viewPrefab);
-                else
-                {
-                    Debug.Log("没有找到界面--->" + viewName);
-                    return;
-                }
+                this.SetParent(viewGo, this.GetRoot(view.layerType));
+                view.Show(parame);
             }
-            BaseView view = GameObject.Instantiate<BaseView>(viewPrefab, this.GetRoot(viewPrefab.layerType));
-            // view.Show(parames);
+            else
+            {
+                Debug.LogError("没有找到资源：" + viewName);
+            }
         }
 
         public void CloseView()
@@ -102,10 +119,18 @@ namespace FrameWork.UI
 
         private GameObject CreateGameObject(string name)
         {
-            GameObject node = new GameObject(("NormalRoot"));
+            GameObject node = new GameObject((name));
             node.transform.SetParent(mainCanvas.transform);
             node.transform.localScale = Vector3.one;
+            node.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
             return node;
+        }
+
+        private void SetParent(Transform tempTransform, Transform parent)
+        {
+            tempTransform.SetParent(parent);
+            tempTransform.localScale = Vector3.one;
+            tempTransform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         }
     }
 }
