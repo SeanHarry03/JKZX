@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace FrameWork.Core
 {
-    public class SingletonMono<T> : MonoBehaviour where T : Component
+    public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T _instance;
 
@@ -38,6 +38,15 @@ namespace FrameWork.Core
                 _instance = this as T;
                 DontDestroyOnLoad(gameObject);
             }
+
+            this.Construction();
+        }
+
+        /// <summary>
+        /// 初始化函数
+        /// </summary>
+        protected virtual void Construction()
+        {
         }
     }
 }

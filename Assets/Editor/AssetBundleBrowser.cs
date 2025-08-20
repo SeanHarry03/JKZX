@@ -29,6 +29,9 @@ public class AssetBundleBrowser
         
         
         Debug.Log("构建成功");
+        // BuildAssetBundleOptions options = BuildAssetBundleOptions.None;
+        // options |= BuildAssetBundleOptions.LZ4; // 使用 LZ4 压缩方式
+        
         BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None,
             BuildTarget.StandaloneWindows);
     }

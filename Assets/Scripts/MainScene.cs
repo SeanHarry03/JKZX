@@ -1,19 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using FrameWork.Core;
+﻿using System.Collections;
+using FrameWork.Event;
+using FrameWork.EventDefine;
+using FrameWork.GameLogic;
+using FrameWork.PatchLogic;
 using UnityEngine;
+using YooAsset;
 
 public class MainScene : MonoBehaviour
 {
-    /// <summary>
-    /// 加载游戏一
-    /// </summary>
-    public void LoadGameOne()
-    {
-        GameObject mainPanel =
-            GameObject.Instantiate(
-                ResManager.Instance.GetResources<GameObject>("One_MainPanel", BundlNameEnum.game_one));
-        mainPanel.transform.SetParent(transform);
-        mainPanel.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-    }
 }
