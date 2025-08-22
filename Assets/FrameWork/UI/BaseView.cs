@@ -1,6 +1,5 @@
 using DG.Tweening;
 using FrameWork.Core;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace FrameWork.UI
@@ -21,38 +20,36 @@ namespace FrameWork.UI
         private bool _isInit = false;
         private bool _isDestroying = false;
 
-        private void Awake()
-        {
-            this.BeforShow();
-            this.OpenAnimation(null);
-        }
+        public string ViewName { get; private set; }
 
-        private void OnDestroy()
+        private void OnCreate()
         {
-            this._isDestroying = true;
-            this.AfterClose();
+            this.ViewName = this.gameObject.name;
         }
 
         /// <summary>
         /// 打开界面
         /// </summary>
+        /// <param name="isAnimation">是否需要动画</param>
         /// <param name="parames"></param>
-        public void Show(object parames)
+        public void Show(object parames = null)
         {
+            this._isShow = true;
             this.ExtraData = parames;
             if (!this._isInit)
             {
                 this._isInit = true;
+                this.OnCreate();
                 this.Init();
             }
-
-            if (this._isShow)
+            else
             {
                 this.OnReresh();
             }
 
-            this._isShow = true;
             this.SetActive(true);
+            this.BeforShow();
+            this.OpenAnimation();
         }
 
         /// <summary>
@@ -63,10 +60,11 @@ namespace FrameWork.UI
             this._isShow = false;
             if (isAnimation)
             {
-                this.CloseAnimation(null);
+                this.CloseAnimation(false, () => { this.SetActive(false); });
             }
             else
             {
+                this.SetActive(false);
                 this.BeforClose();
             }
         }
@@ -78,6 +76,12 @@ namespace FrameWork.UI
         /// </summary>
         public void Close(bool isDestroy = true, bool isAnimation = true)
         {
+            if (this._isClose)
+            {
+                Debug.LogWarning("界面已经关闭！");
+                return;
+            }
+
             this._isClose = true;
             this.BeforeClose();
             //TODO：发送界面关闭的事件
@@ -85,66 +89,30 @@ namespace FrameWork.UI
             //关闭界面的动画
             if (isAnimation)
             {
-                this.CloseAnimation(null);
+                this.CloseAnimation(isDestroy);
             }
             else
             {
-                this.BeforClose();
+                this.DestroySelf();
             }
         }
 
-        protected abstract void Init();
-
-        protected virtual void OnReresh()
-        {
-        }
-
-        protected virtual void BeforShow()
-        {
-        }
-
-        protected virtual void BeforeClose()
-        {
-        }
-
         /// <summary>
-        /// 显示动画结束后调用
+        /// 关闭按钮的点击事件
         /// </summary>
-        protected virtual void AfterShow()
+        public virtual void OnCloseBtn()
         {
+            UIManager.Instance.CloseView(this.ViewName);
         }
 
-
-        /// <summary>
-        /// 关闭动画结束后调用
-        /// </summary>
-        protected virtual void BeforClose()
-        {
-        }
-
-
-        /// <summary>
-        /// 界面销毁后调用
-        /// </summary>
-        protected virtual void AfterClose()
-        {
-        }
-
-
-        private void SetActive(bool state)
-        {
-            if (this.gameObject.activeInHierarchy != state)
-                this.gameObject.SetActive(state);
-        }
-
-        protected virtual void OpenAnimation([CanBeNull] TweenCallback callback)
+        protected virtual void OpenAnimation(TweenCallback callback = null)
         {
             _tween.Kill();
             transform.localScale = Vector3.zero;
             _tween = transform.DOScale(Vector3.one, tweenDuration).SetEase(Ease.OutBack).SetUpdate(true)
                 .OnComplete(() =>
                 {
-                    if (this == null || !this.gameObject)
+                    if (!this || this._isDestroying)
                     {
                         Debug.LogWarning("访问了已经销毁的对象！");
                         return;
@@ -159,13 +127,13 @@ namespace FrameWork.UI
                 });
         }
 
-        protected virtual void CloseAnimation([CanBeNull] TweenCallback callback)
+        protected virtual void CloseAnimation(bool isDestroy, TweenCallback callback = null)
         {
             _tween.Kill();
             _tween = transform.DOScale(Vector3.zero, tweenDuration).SetEase(Ease.InBack).SetUpdate(true)
                 .OnComplete(() =>
                 {
-                    if (this == null || !this.gameObject)
+                    if (!this || this._isDestroying)
                     {
                         Debug.LogWarning("访问了已经销毁的对象！");
                         return;
@@ -176,8 +144,71 @@ namespace FrameWork.UI
                         callback();
                     }
 
-                    this.BeforClose();
+                    if (isDestroy)
+                        this.DestroySelf();
                 });
+        }
+
+        private void SetActive(bool state)
+        {
+            if (this.gameObject.activeInHierarchy != state)
+                this.gameObject.SetActive(state);
+        }
+
+        private void DestroySelf()
+        {
+            if (!this._isDestroying)
+            {
+                this._isDestroying = true;
+                GameObject o = this.gameObject;
+                o.SetActive(false);
+                GameObject.Destroy(o);
+            }
+
+            this.AfterClose();
+        }
+
+        protected abstract void Init();
+
+        protected virtual void OnReresh()
+        {
+        }
+
+        /// <summary>
+        /// 界面打开前
+        /// </summary>
+        protected virtual void BeforShow()
+        {
+        }
+
+        /// <summary>
+        /// 打开动画结束后调用
+        /// </summary>
+        protected virtual void BeforeClose()
+        {
+        }
+
+        /// <summary>
+        /// 显示动画结束后调用
+        /// </summary>
+        protected virtual void AfterShow()
+        {
+        }
+
+
+        /// <summary>
+        /// 动画播放前调用
+        /// </summary>
+        protected virtual void BeforClose()
+        {
+        }
+
+
+        /// <summary>
+        /// 界面销毁后调用
+        /// </summary>
+        protected virtual void AfterClose()
+        {
         }
     }
 }

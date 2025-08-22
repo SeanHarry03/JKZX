@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using FrameWork.Core;
 using UnityEngine;
 using YooAsset;
@@ -17,9 +15,16 @@ namespace FrameWork.UI
         [NonSerialized] public GameObject WarnRoot;
 
         /// <summary>
-        /// 界面缓存
+        /// 界面预制体资源缓存
         /// </summary>
         private Dictionary<string, GameObject> _viewPrefabDic = new Dictionary<string, GameObject>();
+
+        private Dictionary<string, BaseView> _viewDic = new Dictionary<string, BaseView>();
+
+        /// <summary>
+        /// 当前的全屏展示界面
+        /// </summary>
+        private Stack<BaseView> _normalViewStack = new Stack<BaseView>();
 
         /// <summary>
         /// 界面状态的日志打印
@@ -45,29 +50,43 @@ namespace FrameWork.UI
 
         public void ShowView(string viewName, bool isAnimation = true, params object[] parame)
         {
+            if (string.IsNullOrEmpty(viewName))
+            {
+                Debug.LogWarning("viewName 不能为空");
+                return;
+            }
+
             if (this.IsLog)
                 Debug.Log("打开界面--->" + viewName);
-            BaseView view = null;
-            GameObject viewPrefab = Resources.Load<GameObject>(viewName);
+
+
+            BaseView view = this.GetView(viewName);
+            if (view)
+            {
+                view.Show(parame);
+                return;
+            }
+
+            GameObject viewPrefab = null;
             Transform viewGo = null;
-            string bundleName = "resoucres";
+            this._viewPrefabDic.TryGetValue(viewName, out viewPrefab);
             if (viewPrefab == null)
             {
-                //从AssetBunle加载
-                AssetHandle handle = YooAssets.LoadAssetSync<GameObject>(viewName);
+                viewPrefab = Resources.Load<GameObject>(viewName);
+                if (viewPrefab == null)
+                {
+                    //从AssetBunle加载
+                    AssetHandle handle = YooAssets.LoadAssetSync<GameObject>(viewName);
+                    viewPrefab = handle.AssetObject as GameObject;
+                }
 
-                viewGo = handle.InstantiateSync().transform;
-
-                string assetPath = YooAssets.GetAssetInfo(viewName).AssetPath;
-                bundleName = assetPath.Split('/')[2];
-            }
-            else
-            {
-                viewGo = GameObject.Instantiate(viewPrefab).transform;
+                _viewPrefabDic.Add(viewName, viewPrefab);
             }
 
+            viewGo = GameObject.Instantiate(viewPrefab).transform;
             if (viewGo)
             {
+                viewGo.gameObject.name = viewName;
                 view = viewGo.GetComponent<BaseView>();
                 if (view == null)
                 {
@@ -76,21 +95,104 @@ namespace FrameWork.UI
 
                 this.SetParent(viewGo, this.GetRoot(view.layerType));
                 view.Show(parame);
+                //上一层界面隐藏
+                if (view.layerType == LayerTypeEnum.Normal)
+                {
+                    if (this._normalViewStack.Count > 0)
+                    {
+                        this._normalViewStack.Peek().Hide();
+                    }
+
+                    this._normalViewStack.Push(view);
+                }
             }
             else
             {
                 Debug.LogError("没有找到资源：" + viewName);
             }
+
+            _viewDic.Add(viewName, view);
         }
 
-        public void CloseView()
+        public void CloseView(string viewName, bool isAnimation = true)
         {
+            if (string.IsNullOrEmpty(viewName))
+            {
+                Debug.LogWarning("viewName 不能为空");
+                return;
+            }
+
+            BaseView view = this.GetView(viewName);
+            if (!view)
+            {
+                Debug.LogWarning("没有找到界面：" + viewName);
+                return;
+            }
+
+            _viewDic.Remove(viewName);
+            if (view.layerType == LayerTypeEnum.Normal)
+            {
+                this._normalViewStack.Pop();
+                if (this._normalViewStack.Count > 0)
+                {
+                    this._normalViewStack.Peek().Show();
+                }
+            }
+
+            view.Close(true, isAnimation);
         }
 
-        public void HideView()
+        public void HideView(string viewName, bool isAnimation = true)
         {
+            BaseView view = this.GetView(viewName);
+            if (view)
+            {
+                if (view.layerType == LayerTypeEnum.Normal && this._normalViewStack.Count > 0)
+                {
+                    this._normalViewStack.Pop();
+                    this._normalViewStack.Peek().Show();
+                }
+
+                view.Hide(isAnimation);
+            }
         }
 
+        public BaseView GetView(string viewName)
+        {
+            if (string.IsNullOrEmpty(viewName))
+            {
+                Debug.LogWarning("UI名称不能给空");
+                return null;
+            }
+
+            this._viewDic.TryGetValue(viewName, out BaseView view);
+
+            return view;
+        }
+
+        /// <summary>
+        /// 关闭所有的弹窗
+        /// <param name="isAnimation">显示关闭动画</param>
+        /// </summary>
+        public void CloseAllPoupView(bool isAnimation = false)
+        {
+            if (this.IsLog)
+            {
+                Debug.Log("关闭所有的弹窗"!);
+            }
+
+            //弹窗界面查找
+            for (int popupRootChild = 0; popupRootChild < this.PopupRoot.transform.childCount; popupRootChild++)
+            {
+                Transform child = this.PopupRoot.transform.GetChild(popupRootChild);
+                BaseView view = child.GetComponent<BaseView>();
+                if (view)
+                {
+                    view.Close(true, isAnimation);
+                    this._viewDic.Remove(view.ViewName);
+                }
+            }
+        }
 
         private void CreateViewRoot()
         {
@@ -117,9 +219,9 @@ namespace FrameWork.UI
             }
         }
 
-        private GameObject CreateGameObject(string name)
+        private GameObject CreateGameObject(string goName)
         {
-            GameObject node = new GameObject((name));
+            GameObject node = new GameObject((goName));
             node.transform.SetParent(mainCanvas.transform);
             node.transform.localScale = Vector3.one;
             node.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);

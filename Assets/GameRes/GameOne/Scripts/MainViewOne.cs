@@ -1,6 +1,6 @@
 using FrameWork.UI;
 
-public class One_MainPanel : BaseView
+public class MainViewOne : BaseView
 {
     protected override void Init()
     {

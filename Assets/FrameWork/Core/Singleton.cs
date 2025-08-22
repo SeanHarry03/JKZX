@@ -19,5 +19,11 @@ namespace FrameWork.Core
                 return _instance;
             }
         }
+        /// <summary>
+        /// 初始化函数
+        /// </summary>
+        protected virtual void Construction()
+        {
+        }
     }
 }

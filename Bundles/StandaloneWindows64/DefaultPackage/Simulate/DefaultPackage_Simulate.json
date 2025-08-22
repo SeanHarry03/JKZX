@@ -8,7 +8,7 @@
     "BuildPipeline": "EditorSimulateBuildPipeline",
     "PackageName": "DefaultPackage",
     "PackageVersion": "Simulate",
-    "PackageNote": "2025/8/20 18:26:50",
+    "PackageNote": "2025/8/21 16:17:34",
     "AssetList": [
         {
             "Address": "GameObject",
@@ -61,7 +61,7 @@
             "UnityCRC": 0,
             "FileHash": "794c880978bc8546f810b26f52bebe4a",
             "FileCRC": "00000000",
-            "FileSize": 20960,
+            "FileSize": 22878,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
